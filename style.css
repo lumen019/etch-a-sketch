@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+#gridContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+}
+
+.cell {
+    border: 1px solid black;
+}
