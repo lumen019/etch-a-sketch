@@ -1,9 +1,9 @@
 const gridContainer = document.querySelector("#gridContainer");
-const gridSize = 16;
-const totalCells = gridSize * gridSize;
+let gridSize = 16;
+let totalCells = gridSize * gridSize;
 
-
-for (let i = 0; i < totalCells; i++){
+function createGrid () { 
+    for (let i = 0; i < totalCells; i++){
     const cell = document.createElement("div");
     cell.classList.add("cell")
     cell.style.width = `${100/gridSize}%`;
@@ -13,4 +13,16 @@ for (let i = 0; i < totalCells; i++){
         cell.style.backgroundColor = "red";
     })
 }
+}
 
+
+const button = document.querySelector("#prompt");
+button.addEventListener("click", event => {
+        gridSize = prompt("Enter your desired grid size (1-100).");
+        totalCells = gridSize * gridSize;
+        gridContainer.innerHTML = " ";
+        createGrid();
+    })
+
+
+createGrid();
