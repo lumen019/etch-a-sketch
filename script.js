@@ -33,3 +33,9 @@ button.addEventListener("click", event => {
 
 
 createGrid();
+
+const resetBtn = document.querySelector("#resetBtn");
+resetBtn.addEventListener("click", event => {
+        gridContainer.innerHTML = " ";
+        createGrid();
+    })
