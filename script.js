@@ -19,9 +19,16 @@ function createGrid () {
 const button = document.querySelector("#prompt");
 button.addEventListener("click", event => {
         gridSize = prompt("Enter your desired grid size (1-100).");
-        totalCells = gridSize * gridSize;
-        gridContainer.innerHTML = " ";
-        createGrid();
+        if (gridSize > 100) {
+            alert("Your value is outside the accepted range.")
+            gridContainer.innerHTML = " ";
+            gridSize = 16;
+            createGrid();
+        } else {
+            totalCells = gridSize * gridSize;
+            gridContainer.innerHTML = " ";
+            createGrid();
+        }
     })
 
 
