@@ -14,7 +14,6 @@ function randomRgb () {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
-
     return `rgb(${r}, ${g}, ${b})`
 }
 
@@ -25,7 +24,7 @@ gridContainer.addEventListener("mousemove", (e) => {
     if (isDarkMode) {
         e.target.style.backgroundColor = randomRgb();
     } else {
-        e.target.style.backgroundColor = "aqua";
+        e.target.style.backgroundColor = "#70e1a1";
     }   
 })
 
@@ -41,7 +40,7 @@ function createGrid () {
         gridContainer.appendChild(cell);
 
         cell.addEventListener("mousedown", () => {
-            cell.style.backgroundColor = "aqua";
+            cell.style.backgroundColor = "#70e1a1";
         })
     }
 }
@@ -65,14 +64,16 @@ function createRgbGrid () {
 
 const resizeBtn = document.querySelector("#resizeBtn");
 resizeBtn.addEventListener("click", () => {
-        gridSize = prompt("Enter your desired grid size (1-100).");
+        gridSize = prompt("Enter your desired grid size (16-100).");
         gridSize = Number(gridSize)
-        if (gridSize < 1 || gridSize > 100 || isNaN(gridSize)) {
+        if (gridSize < 16 || gridSize > 100 || isNaN(gridSize)) {
             alert("Your value is outside the accepted range.")
             gridContainer.innerHTML = " ";
             gridSize = 16;
-        }
             createGrid();
+            return
+        }
+        createGrid();
 });
 
 const resetBtn = document.querySelector("#resetBtn");
@@ -90,5 +91,12 @@ darkMode.addEventListener ("click", () => {
 })
 
 const lightMode = document.querySelector("#lightMode");
+lightMode.addEventListener ("click", () => {
+    isDarkMode = false;
+    document.body.style.backgroundColor = "white"
+    gridContainer.style.backgroundColor = "white"
+    createGrid();
+})
+
 
 createGrid();

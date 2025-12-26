@@ -12,6 +12,8 @@
 
 .cell {
     border: 1px solid lightgray;
+    box-shadow: 0 0 2.5px white;
+    border-radius: 2px;
 }
 
 #buttonContainer {
