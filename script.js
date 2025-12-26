@@ -3,12 +3,9 @@ let gridSize = 16;
 let totalCells = gridSize * gridSize;
 
 let isMouseDown = false;
-document.addEventListener("mousedown", event => {
-    isMouseDown = true;
-})
-document.addEventListener("mouseup", event => {
-    isMouseDown = false;
-})
+gridContainer.addEventListener("mousedown", () => isMouseDown = true);
+window.addEventListener("mouseup", () => isMouseDown = false);
+gridContainer.addEventListener('dragstart', (e) => e.preventDefault());
 
 function createGrid () { 
     for (let i = 0; i < totalCells; i++){
@@ -22,7 +19,7 @@ function createGrid () {
             cell.style.backgroundColor = "red";
         })
 
-        cell.addEventListener("mouseover", event => {
+        cell.addEventListener("mousemove", event => {
             if (isMouseDown === true) {
                 cell.style.backgroundColor = "red";
             }
