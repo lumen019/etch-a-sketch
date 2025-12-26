@@ -24,7 +24,7 @@ gridContainer.addEventListener("mousemove", (e) => {
     if (isDarkMode) {
         e.target.style.backgroundColor = randomRgb();
     } else {
-        e.target.style.backgroundColor = "#70e1a1";
+        e.target.style.backgroundColor = "#6ec6ff";
     }   
 })
 
@@ -40,7 +40,7 @@ function createGrid () {
         gridContainer.appendChild(cell);
 
         cell.addEventListener("mousedown", () => {
-            cell.style.backgroundColor = "#70e1a1";
+            cell.style.backgroundColor = "#6ec6ff";
         })
     }
 }

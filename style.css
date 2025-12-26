@@ -2,22 +2,46 @@
     box-sizing: border-box;
 }
 
+#Container {
+    display: flex;
+    flex-direction: column;     
+    align-items: center;        
+    margin-top: 20px;           
+}
+
 #gridContainer {
     display: flex;
     flex-wrap: wrap;
     width: 500px;
     height: 500px;
-    border: 1px solid black;
+    border: 1px solid black; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 5px;
+    border-radius: 10px; 
+    background-color: white; 
+    margin: 20px;
 }
 
+
 .cell {
-    border: 1px solid lightgray;
-    box-shadow: 0 0 2.5px white;
-    border-radius: 2px;
+    border: 1px solid lightgray; 
+    border-radius: 3px;                
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05); 
 }
 
 #buttonContainer {
     display: flex;
-    gap: 15px;
-    margin: 10px;
+    gap: 15px;          
+    margin-top: 15px;  
+}
+
+#buttonContainer button {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+}
+
+#buttonContainer button:hover {
+    transform: scale(1.05); 
 }
